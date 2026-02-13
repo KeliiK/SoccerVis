@@ -1,0 +1,77 @@
+#container {
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "title title"
+        "btn1 btn2";
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+#title {
+    z-index: 2;
+    font-size: clamp(3rem, 20vh, 14rem);
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    color: white;
+    background: linear-gradient(175deg, rgb(0, 255, 213), #fff 80%); 
+    -webkit-background-clip: text; /* clips background to the text */
+    -webkit-text-fill-color: transparent; /* makes text itself transparent so background shows */
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.2),   /* inner soft cyan glow */
+        0 0 20px rgba(0, 255, 213, 0.05),   /* extended cyan glow */
+        0 0 30px rgba(255, 255, 255, 0.5), /* white halo */
+        0 0 50px rgba(255, 255, 255, 0); /* subtle outer fade */
+}
+
+#buttonContainer {
+    margin-bottom: -5em; 
+    grid-row-start: 2;
+    width: 100vw;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 3em;
+    background: rgba(255, 255, 255, 0.1); 
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    backdrop-filter: blur(20px);          
+    background: linear-gradient(175deg, rgb(0, 255, 213), #fff 60%); 
+    -webkit-background-clip: text; /* clips background to the text */
+    -webkit-text-fill-color: transparent; /* makes text itself transparent so background shows */
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.2),  
+        0 0 20px rgba(0, 255, 213, 0.05),   
+        0 0 30px rgba(255, 255, 255, 0.5),
+        0 0 50px rgba(0, 255, 213, 0); 
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.25),
+        0 0 25px rgba(0, 255, 213, 0.2);
+
+    transform: translateY(-10%);
+}
+
+button:active {
+    transform: scale(1);
+}
